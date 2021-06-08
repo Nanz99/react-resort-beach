@@ -39,29 +39,20 @@ export const RoomsProvider = ({ children }) => {
         dispatch({ type: GET_ROOMS })
     }
 
-    const filterRooms = (type, capacity, price) => {
+    const filterRooms = (type, capacity, price, minSize, maxSize, breakfast, pets) => {
         dispatch({ type: FILTER_TYPE, payload: { type } })
         dispatch({ type: FILTER_CAPACITY, payload: { capacity } })
         dispatch({ type: FILTER_PRICE, payload: { price } })
-        // dispatch({ type: FILTER_SIZE, payload: { minSize, maxSize } })
-        // dispatch({ type: FILTER_BREAKFAST, payload: { breakfast } })
-        // dispatch({ type: FILTER_PETS, payload: { pets } })
+        dispatch({ type: FILTER_SIZE, payload: { minSize, maxSize } })
+        dispatch({ type: FILTER_BREAKFAST, payload: { breakfast } })
+        dispatch({ type: FILTER_PETS, payload: { pets } })
     }
-    // const filterByType = ({ type }) => {
-    //     dispatch({ type: FILTER_TYPE, payload: { type } })
-    // }
-    // const filterByCapacity = ({ capacity }) => {
-    //     dispatch({ type: FILTER_CAPACITY, payload: { capacity } })
-    // }
+
     const handleChange = event => {
         const target = event.target;
         const name = event.target.name;
         const value = event.type === 'checkbox' ? target.checked : target.value;
-
         filterRooms({ [name]: value })
-        // filterByType({ [name]: value })
-        // filterByCapacity({ [name]: value })
-
         console.log({ [name]: value })
     }
 
