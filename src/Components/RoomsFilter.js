@@ -19,6 +19,7 @@ const RoomsFilter = ({ rooms }) => {
       breakfast,
       pets
    } = useGlobalContext();
+
    let types = getUnique(rooms, 'type');
    types = ['all', ...types];
 
@@ -29,9 +30,9 @@ const RoomsFilter = ({ rooms }) => {
    people = people.map((item, index) => {
       return <option value={item} key={index}>{item}</option>
    })
-  
+
    return (
-      <section className="filter-container">
+      < section className="filter-container" >
          <Title title="search rooms" />
          <form className="filter-form">
             {/* Types */}
@@ -72,7 +73,7 @@ const RoomsFilter = ({ rooms }) => {
                </div>
             </div>
          </form>
-      </section>
+      </section >
 
    );
 }
