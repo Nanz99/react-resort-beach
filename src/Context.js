@@ -42,6 +42,15 @@ export const RoomsProvider = ({ children }) => {
         dispatch({ type: GET_ROOMS });
     }
 
+    
+
+    const getRoom = (slug) => {
+        let tempRooms = [...state.rooms];
+        const room = tempRooms.find(room => room.slug === slug);
+        console.log("room",room)
+        return room;
+    }
+
     const handleChange = (event) => {
         event.preventDefault();
         const target = event.target;
@@ -52,10 +61,11 @@ export const RoomsProvider = ({ children }) => {
         setFilter({ ...filter, [name]: value });
 
     }
-
+console.log(state)
     return (
         <RoomsContext.Provider value={{
             ...state,
+            getRoom,
             handleChange,
         }}>
             {children}

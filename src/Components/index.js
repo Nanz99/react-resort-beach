@@ -9,6 +9,7 @@ import RoomsContainer from './RoomsContainer'
 import RoomsFilter from './RoomsFilter'
 import RoomsList from './RoomsList'
 import Services from './Services'
+import StyledHero from './StyledHero'
 import Title from './Title'
 
 
@@ -24,5 +25,6 @@ export {
    RoomsContainer,
    RoomsFilter,
    RoomsList,
-   Room
+   Room,
+   StyledHero
 }

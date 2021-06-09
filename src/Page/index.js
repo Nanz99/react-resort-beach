@@ -1,7 +1,7 @@
 import HomePage from "./HomePage"
 import AboutPage from "./AboutPage"
 import RoomPage from "./RoomPage"
-import SingleRoomPage from "./HomePage"
+import SingleRoomPage from "./SingleRoomPage"
 import ErrorPage from "./ErrorPage"
 
 export {

@@ -7,6 +7,7 @@ import { roomsData } from './Utils/data'
 const RoomsReducer = (state, action) => {
    if (action.type === CHANGE_STATE) {
       let newState = { ...state };
+      console.log(newState)
       newState = { ...newState, [action.payload.key]: action.payload.value };
       return { ...newState };
    }
